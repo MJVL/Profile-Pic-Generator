@@ -1,5 +1,5 @@
 import javax.swing.*;
-import java.awt.Color;
+import java.awt.*;
 
 public class Block extends JLabel {
 
@@ -8,6 +8,7 @@ public class Block extends JLabel {
     public Block() {
         setOpaque(true);
         Active = false;
+        //setPreferredSize(new Dimension(75,75));
     }
 
     public void setActive(boolean Active) {
