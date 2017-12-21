@@ -1,0 +1,9 @@
+# User Specific Settings
+
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries
+
+# Production Files
+
+out/
