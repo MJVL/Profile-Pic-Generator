@@ -6,7 +6,7 @@ Creates symmetrical blocky profile pictures with random colors. Project will be 
 
 
 ### Jar Status
-Jar will not always be up to date with the files. **Last jar update: 12/21/2017, commit #14.**
+Jar will not always be up to date with the files. **Last jar update: 12/23/2017.**
 
 ### Extra Information
 
