@@ -39,8 +39,6 @@ public class GeneratorGUI extends JFrame {
                 myGrid.Paint();
             }
             else if (e.getSource() == mnuSave) {
-                myGrid.randColor();
-                myGrid.Repaint();
                 JFrame parentFrame = new JFrame();
                 JFileChooser fileChooser = new JFileChooser();
                 fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("PNG Portable Network Graphics Format", ".png"));
