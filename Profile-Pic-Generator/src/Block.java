@@ -8,7 +8,7 @@ public class Block extends JLabel {
     public Block() {
         setOpaque(true);
         Active = false;
-        //setPreferredSize(new Dimension(75,75));
+        setPreferredSize(new Dimension(75,75));
     }
 
     public void setActive(boolean Active) {
