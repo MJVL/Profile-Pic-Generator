@@ -24,7 +24,7 @@ public class GeneratorGUI extends JFrame {
         add(myGrid);
         setTitle("GitHubPic");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setSize(500,500);
+        setResizable(false);
         pack();
         setVisible(true);
         myGrid.Paint();
