@@ -29,6 +29,20 @@ public class BlockGridPanel extends JPanel {
         randColor();
     }
 
+    public void Resize(int GridSize) {
+        this.GridSize = GridSize;
+        removeAll();
+        ArrBlocks = new Block[GridSize][GridSize];
+        setLayout(new GridLayout(GridSize,GridSize));
+        for (int i = 0; i < GridSize; i++) {
+            for (int j = 0; j < GridSize; j++) {
+                ArrBlocks[i][j] = new Block();
+                add(ArrBlocks[i][j]);
+            }
+        }
+        randColor();
+    }
+
     public void Paint() {
         Random rSplit = new Random();
         for (int i = 0; i < GridSize; i++) {
