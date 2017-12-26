@@ -29,6 +29,14 @@ public class BlockGridPanel extends JPanel {
         randColor();
     }
 
+    public void setBlockColor(Color BlockColor) {
+        this.BlockColor = BlockColor;
+    }
+
+    public Color getBlockColor() {
+        return BlockColor;
+    }
+
     public void Resize(int GridSize) {
         this.GridSize = GridSize;
         removeAll();
