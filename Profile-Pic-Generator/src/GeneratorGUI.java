@@ -1,5 +1,6 @@
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,7 +13,8 @@ public class GeneratorGUI extends JFrame {
     private JMenuItem mnuSave = new JMenuItem("Save");
 
     private JMenu mnuSettings = new JMenu("Settings");
-    private JMenuItem mnuResize = new JMenuItem("Change Grid Size");
+    private JMenuItem mnuGridSize = new JMenuItem("Grid Size");
+    private JMenuItem mnuColor = new JMenuItem("Color");
 
     private BlockGridPanel myGrid = new BlockGridPanel();
 
@@ -20,12 +22,14 @@ public class GeneratorGUI extends JFrame {
         mnuTools.add(mnuRandom);
         mnuTools.add(mnuSave);
         mnuBar.add(mnuTools);
-        mnuSettings.add(mnuResize);
+        mnuSettings.add(mnuGridSize);
+        mnuSettings.add(mnuColor);
         mnuBar.add(mnuSettings);
         setJMenuBar(mnuBar);
         mnuRandom.addActionListener(new MenuListener());
         mnuSave.addActionListener(new MenuListener());
-        mnuResize.addActionListener(new MenuListener());
+        mnuGridSize.addActionListener(new MenuListener());
+        mnuColor.addActionListener(new MenuListener());
         add(myGrid);
         setTitle("GitHubPic");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -62,7 +66,7 @@ public class GeneratorGUI extends JFrame {
                     }
                 }
             }
-            else if (e.getSource() == mnuResize) {
+            else if (e.getSource() == mnuGridSize) {
                 try {
                     int newSize = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter grid size (5-50).","Resize",JOptionPane.QUESTION_MESSAGE));
                     if (newSize >= 5 && newSize <= 50) {
@@ -75,6 +79,16 @@ public class GeneratorGUI extends JFrame {
                     }
                 } catch (Exception je) {
                     JOptionPane.showMessageDialog(null,"Error. Please enter a proper integer within the range of 5-50.","Resize Error",JOptionPane.WARNING_MESSAGE);
+                }
+            }
+            else if (e.getSource() == mnuColor) {
+                Color newColor = JColorChooser.showDialog(null, "Choose a color.", myGrid.getBlockColor());
+                if (newColor != null) {
+                    myGrid.setBlockColor(newColor);
+                    myGrid.Repaint();
+                }
+                else {
+                    JOptionPane.showMessageDialog(null,"Error. Please choose a proper color.","Color Error",JOptionPane.WARNING_MESSAGE);
                 }
             }
         }
