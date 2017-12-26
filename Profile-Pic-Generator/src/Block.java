@@ -3,12 +3,14 @@ import java.awt.*;
 
 public class Block extends JLabel {
 
+    public final static int DEFAULT_SIZE = 75;
+
     private boolean Active;
 
     public Block() {
         setOpaque(true);
         Active = false;
-        setPreferredSize(new Dimension(75,75));
+        setPreferredSize(new Dimension(DEFAULT_SIZE,DEFAULT_SIZE));
     }
 
     public void setActive(boolean Active) {
@@ -33,8 +35,16 @@ public class Block extends JLabel {
         Active = false;
     }
 
+    public void Resize(int n) {
+        Resize(PixelRatio(n),PixelRatio(n));
+    }
+
     public void Resize(int Width, int Height) {
         setPreferredSize(new Dimension(Width, Height));
+    }
+
+    public static int PixelRatio(int n) {
+        return (int) ((5.0 / n) * DEFAULT_SIZE);
     }
 
 }
