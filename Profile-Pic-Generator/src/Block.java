@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class Block extends JLabel {
 
-    public final static int DEFAULT_SIZE = 75;
+    public final static int DEFAULT_SIZE = 100;
 
     private boolean Active;
 
