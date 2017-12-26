@@ -8,9 +8,13 @@ import java.io.File;
 public class GeneratorGUI extends JFrame {
 
     private JMenuBar mnuBar = new JMenuBar();
+
     private JMenu mnuTools = new JMenu("Tools");
     private JMenuItem mnuRandom = new JMenuItem("Random");
     private JMenuItem mnuSave = new JMenuItem("Save");
+
+    private JMenu mnuSettings = new JMenu("Settings");
+    private JMenuItem mnuResize = new JMenuItem("Change Grid Size");
 
     private BlockGridPanel myGrid = new BlockGridPanel();
 
@@ -18,9 +22,12 @@ public class GeneratorGUI extends JFrame {
         mnuTools.add(mnuRandom);
         mnuTools.add(mnuSave);
         mnuBar.add(mnuTools);
+        mnuSettings.add(mnuResize);
+        mnuBar.add(mnuSettings);
         setJMenuBar(mnuBar);
         mnuRandom.addActionListener(new MenuListener());
         mnuSave.addActionListener(new MenuListener());
+        mnuResize.addActionListener(new MenuListener());
         add(myGrid);
         setTitle("GitHubPic");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -56,6 +63,9 @@ public class GeneratorGUI extends JFrame {
                         myGrid.Save(Path);
                     }
                 }
+            }
+            else if (e.getSource() == mnuResize) {
+
             }
         }
 
