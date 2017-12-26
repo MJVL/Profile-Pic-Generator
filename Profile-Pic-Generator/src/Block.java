@@ -33,4 +33,8 @@ public class Block extends JLabel {
         Active = false;
     }
 
+    public void Resize(int Width, int Height) {
+        setPreferredSize(new Dimension(Width, Height));
+    }
+
 }
