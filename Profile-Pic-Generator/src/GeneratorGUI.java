@@ -1,9 +1,7 @@
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 
 public class GeneratorGUI extends JFrame {
 
@@ -65,7 +63,19 @@ public class GeneratorGUI extends JFrame {
                 }
             }
             else if (e.getSource() == mnuResize) {
-
+                try {
+                    int newSize = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter grid size (5-50).","Resize",JOptionPane.QUESTION_MESSAGE));
+                    if (newSize >= 5 && newSize <= 50) {
+                        myGrid.Resize(newSize);
+                        myGrid.Paint();
+                        pack();
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null,"Error. Please enter a proper integer within the range of 5-50.","Resize Error",JOptionPane.WARNING_MESSAGE);
+                    }
+                } catch (Exception je) {
+                    JOptionPane.showMessageDialog(null,"Error. Please enter a proper integer within the range of 5-50.","Resize Error",JOptionPane.WARNING_MESSAGE);
+                }
             }
         }
 
