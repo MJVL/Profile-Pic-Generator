@@ -10,16 +10,18 @@ import java.util.Random;
 
 public class BlockGridPanel extends JPanel {
 
-    private Block[][] ArrBlocks = new Block[SIZE][SIZE];
+    private Block[][] ArrBlocks;
 
     private Color BlockColor;
 
-    private static final int SIZE = 5;
+    private int GridSize;
 
     public BlockGridPanel() {
-        setLayout(new GridLayout(SIZE,SIZE));
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
+        GridSize = 5;
+        ArrBlocks = new Block[GridSize][GridSize];
+        setLayout(new GridLayout(GridSize,GridSize));
+        for (int i = 0; i < GridSize; i++) {
+            for (int j = 0; j < GridSize; j++) {
                 ArrBlocks[i][j] = new Block();
                 add(ArrBlocks[i][j]);
             }
@@ -29,8 +31,8 @@ public class BlockGridPanel extends JPanel {
 
     public void Paint() {
         Random rSplit = new Random();
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < (double) SIZE / 2 + .5; j++) {
+        for (int i = 0; i < GridSize; i++) {
+            for (int j = 0; j < (double) GridSize / 2 + .5; j++) {
                 if (rSplit.nextBoolean()) {
                     ArrBlocks[i][j].setColor(BlockColor);
                     ArrBlocks[i][Reflection(j)].setColor(BlockColor);
@@ -40,8 +42,8 @@ public class BlockGridPanel extends JPanel {
     }
 
     public void Repaint() {
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < (double) SIZE / 2 + .5; j++) {
+        for (int i = 0; i < GridSize; i++) {
+            for (int j = 0; j < (double) GridSize / 2 + .5; j++) {
                 if (ArrBlocks[i][j].getActive()) {
                     ArrBlocks[i][j].setColor(BlockColor);
                     ArrBlocks[i][Reflection(j)].setColor(BlockColor);
@@ -52,8 +54,8 @@ public class BlockGridPanel extends JPanel {
 
 
     public void Clear() {
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
+        for (int i = 0; i < GridSize; i++) {
+            for (int j = 0; j < GridSize; j++) {
                 ArrBlocks[i][j].Clear();
             }
         }
@@ -77,7 +79,7 @@ public class BlockGridPanel extends JPanel {
     }
 
     private int Reflection (int Index) {
-        return -Index + SIZE - 1;
+        return -Index + GridSize - 1;
     }
 
 
