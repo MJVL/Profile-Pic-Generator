@@ -1,8 +1,10 @@
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import java.awt.Color;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class GeneratorGUI extends JFrame {
 
@@ -31,11 +33,13 @@ public class GeneratorGUI extends JFrame {
         mnuGridSize.addActionListener(new MenuListener());
         mnuColor.addActionListener(new MenuListener());
         add(myGrid);
-        setTitle("GitHubPic");
+        setTitle("Profile Pic Generator");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setIconImages(new ArrayList<>(Arrays.asList(new ImageIcon("src/Assets/icon-16.png").getImage(),new ImageIcon("src/Assets/icon-32.png").getImage(),new ImageIcon("src/Assets/icon-64.png").getImage())));
         setResizable(false);
         pack();
         setVisible(true);
+        setLocationRelativeTo(null);
         myGrid.Paint();
     }
 
@@ -75,10 +79,10 @@ public class GeneratorGUI extends JFrame {
                         pack();
                     }
                     else {
-                        JOptionPane.showMessageDialog(null,"Error. Please enter a proper integer within the range of 5-50.","Resize Error",JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null,"Error. Please enter an integer within the range of 5-50.","Resize Error",JOptionPane.WARNING_MESSAGE);
                     }
                 } catch (Exception je) {
-                    JOptionPane.showMessageDialog(null,"Error. Please enter a proper integer within the range of 5-50.","Resize Error",JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Error. Please enter an integer within the range of 5-50.","Resize Error",JOptionPane.WARNING_MESSAGE);
                 }
             }
             else if (e.getSource() == mnuColor) {
