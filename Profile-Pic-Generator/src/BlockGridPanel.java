@@ -37,6 +37,7 @@ public class BlockGridPanel extends JPanel {
         for (int i = 0; i < GridSize; i++) {
             for (int j = 0; j < GridSize; j++) {
                 ArrBlocks[i][j] = new Block();
+                ArrBlocks[i][j].Resize(GridSize);
                 add(ArrBlocks[i][j]);
             }
         }
