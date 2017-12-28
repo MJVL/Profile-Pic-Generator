@@ -72,17 +72,17 @@ public class GeneratorGUI extends JFrame {
             }
             else if (e.getSource() == mnuGridSize) {
                 try {
-                    int newSize = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter grid size (5-50).","Resize",JOptionPane.QUESTION_MESSAGE));
+                    int newSize = Integer.parseInt(JOptionPane.showInputDialog(null,"Enter grid size (" + BlockGridPanel.MIN_SIZE + "-" + BlockGridPanel.MAX_SIZE + ").","Resize",JOptionPane.QUESTION_MESSAGE));
                     if (newSize >= BlockGridPanel.MIN_SIZE && newSize <= BlockGridPanel.MAX_SIZE) {
                         myGrid.Resize(newSize);
                         myGrid.Paint();
                         pack();
                     }
                     else {
-                        JOptionPane.showMessageDialog(null,"Please enter an integer within the range of 5-50.","Resize Error",JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null,"Please enter an integer within the range of " + BlockGridPanel.MIN_SIZE + "-" + BlockGridPanel.MAX_SIZE + ".","Resize Error",JOptionPane.WARNING_MESSAGE);
                     }
                 } catch (Exception je) {
-                    JOptionPane.showMessageDialog(null,"Please enter an integer within the range of 5-50.","Resize Error",JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Please enter an integer within the range of " + BlockGridPanel.MIN_SIZE + "-" + BlockGridPanel.MAX_SIZE + ".","Resize Error",JOptionPane.WARNING_MESSAGE);
                 }
             }
             else if (e.getSource() == mnuColor) {
