@@ -1,11 +1,8 @@
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -38,16 +35,7 @@ public class GeneratorGUI extends JFrame {
         add(myGrid);
         setTitle("Profile Pic Generator");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        System.out.println(System.getProperty("user.dir"));
-        String rootPath = System.getProperty("user.dir");
-        String imgPath = "/src/Assets/icon-16.png";
-        //setIconImage(new ImageIcon(getClass().getResource("Assets/icon-16.png")).getImage());
         setIconImages(new ArrayList<>(Arrays.asList(new ImageIcon(getClass().getResource("Assets/icon-16.png")).getImage(),new ImageIcon(getClass().getResource("Assets/icon-32.png")).getImage(),new ImageIcon(getClass().getResource("Assets/icon-64.png")).getImage())));
-        //System.out.println(rootPath + imgPath);
-        //setIconImage(new ImageIcon(rootPath + imgPath).getImage());
-        //setIconImages(new ArrayList<>(Arrays.asList(new ImageIcon(rootPath + "/src/Assets/icon-16.png").getImage(),new ImageIcon(rootPath + "/src/Assets/icon-32.png").getImage(),new ImageIcon(rootPath + "/src/Assets/icon-64.png").getImage())));
-        //setIconImages(new ArrayList<>(Arrays.asList(new ImageIcon("src/Assets/icon-16.png").getImage(),new ImageIcon("src/Assets/icon-32.png").getImage(),new ImageIcon("src/Assets/icon-64.png").getImage())));
-        setResizable(false);
         pack();
         setVisible(true);
         setLocationRelativeTo(null);
