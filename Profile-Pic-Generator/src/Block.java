@@ -3,9 +3,9 @@ import java.awt.*;
 
 public class Block extends JLabel {
 
-    public final static int DEFAULT_SIZE = 100;
-
     private boolean Active;
+
+    public final static int DEFAULT_SIZE = 100;
 
     public Block() {
         setOpaque(true);
@@ -35,16 +35,12 @@ public class Block extends JLabel {
         Active = false;
     }
 
-    public void Resize(int n) {
-        Resize(PixelRatio(n),PixelRatio(n));
+    public void Resize(int Base, int n) {
+        setPreferredSize(new Dimension(PixelRatio(Base, n),PixelRatio(Base, n)));
     }
 
-    public void Resize(int Width, int Height) {
-        setPreferredSize(new Dimension(Width, Height));
-    }
-
-    public static int PixelRatio(int n) {
-        return (int) ((5.0 / n) * DEFAULT_SIZE);
+    public static int PixelRatio(int Base, int n) {
+        return (int) (((double)Base / n) * DEFAULT_SIZE);
     }
 
 }

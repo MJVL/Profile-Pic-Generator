@@ -11,13 +11,15 @@ import java.util.Random;
 public class BlockGridPanel extends JPanel {
 
     private Block[][] ArrBlocks;
-
     private Color BlockColor;
-
     private int GridSize;
 
+    public static final int DEFAULT_SIZE = 5;
+    public static final int MIN_SIZE = 5;
+    public static final int MAX_SIZE = 50;
+
     public BlockGridPanel() {
-        GridSize = 5;
+        GridSize = DEFAULT_SIZE;
         ArrBlocks = new Block[GridSize][GridSize];
         setLayout(new GridLayout(GridSize,GridSize));
         for (int i = 0; i < GridSize; i++) {
@@ -45,7 +47,7 @@ public class BlockGridPanel extends JPanel {
         for (int i = 0; i < GridSize; i++) {
             for (int j = 0; j < GridSize; j++) {
                 ArrBlocks[i][j] = new Block();
-                ArrBlocks[i][j].Resize(GridSize);
+                ArrBlocks[i][j].Resize(MIN_SIZE, GridSize);
                 add(ArrBlocks[i][j]);
             }
         }
