@@ -5,7 +5,7 @@
 Creates symmetrical blocky profile pictures with random colors. Project will be updated occasionally.
 
 
-## Jar Exe Status
+## Jar Status
 Jar may not always be up to date with the files. **Last jar update: 12/29/2017.**
 
 ## Exe Status
