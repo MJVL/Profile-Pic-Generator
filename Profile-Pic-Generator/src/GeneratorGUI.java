@@ -3,6 +3,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -18,6 +19,10 @@ public class GeneratorGUI extends JFrame {
     private JMenuItem mnuGridSize = new JMenuItem("Grid Size");
     private JMenuItem mnuColor = new JMenuItem("Color");
 
+    private JMenu mnuAbout = new JMenu("About");
+    private JMenuItem mnuLicense = new JMenuItem("License");
+    private JMenuItem mnuSourceCode = new JMenuItem("Source Code");
+
     private BlockGridPanel myGrid = new BlockGridPanel();
 
     public GeneratorGUI() {
@@ -27,11 +32,16 @@ public class GeneratorGUI extends JFrame {
         mnuSettings.add(mnuGridSize);
         mnuSettings.add(mnuColor);
         mnuBar.add(mnuSettings);
+        mnuAbout.add(mnuLicense);
+        mnuAbout.add(mnuSourceCode);
+        mnuBar.add(mnuAbout);
         setJMenuBar(mnuBar);
         mnuRandom.addActionListener(new MenuListener());
         mnuSave.addActionListener(new MenuListener());
         mnuGridSize.addActionListener(new MenuListener());
         mnuColor.addActionListener(new MenuListener());
+        mnuLicense.addActionListener(new MenuListener());
+        mnuSourceCode.addActionListener(new MenuListener());
         add(myGrid);
         setTitle("Profile Pic Generator");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -92,6 +102,20 @@ public class GeneratorGUI extends JFrame {
                 }
                 else {
                     JOptionPane.showMessageDialog(null,"Please choose a proper color.","Color Error",JOptionPane.WARNING_MESSAGE);
+                }
+            }
+            else if (e.getSource() == mnuLicense) {
+                try {
+                    Desktop.getDesktop().browse(new URL("https://github.com/MJVL/Profile-Pic-Generator/blob/master/LICENSE.md").toURI());
+                } catch (Exception eu) {
+                    JOptionPane.showMessageDialog(null,"Couldn't retrieve online license.","License Error",JOptionPane.WARNING_MESSAGE);
+                }
+            }
+            else if (e.getSource() == mnuSourceCode) {
+                try {
+                    Desktop.getDesktop().browse(new URL("https://github.com/MJVL/Profile-Pic-Generator").toURI());
+                } catch (Exception eu) {
+                    JOptionPane.showMessageDialog(null,"Couldn't retrieve repository.","Repository Error",JOptionPane.WARNING_MESSAGE);
                 }
             }
         }
