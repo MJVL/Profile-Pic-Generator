@@ -91,8 +91,8 @@ public class BlockGridPanel extends JPanel {
         paint(Image.createGraphics());
         try {
             OutputStream oStream = new FileOutputStream(Path);
-            JPEGImageEncoder JIEnconder = JPEGCodec.createJPEGEncoder(oStream);
-            JIEnconder.encode(Image);
+            JPEGImageEncoder JIEncoder = JPEGCodec.createJPEGEncoder(oStream);
+            JIEncoder.encode(Image);
             oStream.close();
         } catch (Exception e) {
             System.err.println(e);
