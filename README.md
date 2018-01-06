@@ -1,6 +1,6 @@
 # Profile-Pic-Generator
 
-## Simplistic profile pic generator made to mimic GitHub identicons.
+Simplistic profile pic generator made to mimic GitHub identicons.
 
 Creates symmetrical blocky profile pictures with random colors. Project will be updated occasionally.
 
