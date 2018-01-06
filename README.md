@@ -6,10 +6,10 @@ Creates symmetrical blocky profile pictures with random colors. Project will be 
 
 
 ## Jar Status
-Jar may not always be up to date with the files. **Last jar update: 12/29/2017.**
+Jar may not always be up to date with the files. **Last jar update: 1/6/2018.**
 
 ## Exe Status
-Exe may not always be up to date with the files. **Last exe update: 12/29/2017.**
+Exe may not always be up to date with the files. **Last exe update: 1/6/2018.**
 
 ## Extra Information
 
